@@ -1,0 +1,6 @@
+export { default as appsReducer } from './appsReducer'
+export { default as chartsReducer } from './chartsReducer'
+export { default as customersReducer } from './customersReducer'
+export { default as dashboardReducer } from './dashboardReducer'
+export { default as employeesReducer } from './employeesReducer'
+export { default as ordersReducer } from './ordersReducer'

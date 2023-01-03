@@ -2,9 +2,7 @@
   "plugins": ["@typescript-eslint"],
   "extends": [
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "plugin:react/recommended",
-    "airbnb"
+    "prettier"
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
