@@ -11,7 +11,7 @@ module.exports = {
         14: '14px',
       },
       backgroundColor: {
-        'main-bg': '#FAFBFB',
+        'main-bg': '#F0F0F0',
         'main-dark-bg': '#20232A',
         'secondary-dark-bg': '#33373E',
         'light-gray': '#F7F7F7',
@@ -37,9 +37,6 @@ module.exports = {
       },
       minHeight: {
         590: '590px',
-      },
-      backgroundImage: {
-        'hero-pattern': "url('https://i.ibb.co/MkvLDfb/Rectangle-4389.png')",
       },
     },
   },
