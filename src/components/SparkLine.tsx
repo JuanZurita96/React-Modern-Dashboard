@@ -4,7 +4,27 @@ import {
   SparklineTooltip,
 } from '@syncfusion/ej2-react-charts'
 
-const SparkLine = ({ id, height, width, color, data, type, currentColor }) => (
+interface SparkLineProps {
+  currentColor: string
+  id: string
+  type: 'Line' | 'Column' | 'WinLoss' | 'Pie' | 'Area' | undefined
+  height: string
+  width: string
+  data: {
+    x: number
+    yval: number
+  }[]
+  color: string
+}
+const SparkLine = ({
+  id,
+  height,
+  width,
+  color,
+  data,
+  type,
+  currentColor,
+}: SparkLineProps) => (
   <SparklineComponent
     id={id}
     height={height}

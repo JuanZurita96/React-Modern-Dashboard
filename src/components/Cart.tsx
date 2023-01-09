@@ -3,7 +3,12 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { cartData } from '../constants/data'
 import Button from './Button'
 
-const Cart = ({ currentColor, changeFunc }) => (
+interface CartProps {
+  currentColor: string
+  changeFunc: () => void
+}
+
+const Cart = ({ currentColor, changeFunc }: CartProps) => (
   <div className="nav-item fixed top-0 right-0 w-full bg-half-transparent ">
     <div className="float-right h-screen  bg-white p-8 transition-all duration-1000 ease-in-out dark:bg-[#484B52] dark:text-gray-200 md:w-400">
       <div className="flex items-center justify-between">

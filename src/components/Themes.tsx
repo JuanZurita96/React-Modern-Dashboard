@@ -17,7 +17,7 @@ const ThemeSettings = () => {
     <div className="nav-item fixed top-0 right-0 w-screen bg-half-transparent">
       <div className="float-right h-screen w-400  bg-white dark:bg-[#484B52] dark:text-gray-200">
         <div className="ml-4 flex items-center justify-between p-4">
-          <p className="text-lg font-semibold">Settings</p>
+          <p className="text-lg font-semibold">Theme Settings</p>
           <button
             type="button"
             onClick={() => dispatch(activeThemeSettings(false))}
@@ -28,7 +28,7 @@ const ThemeSettings = () => {
           </button>
         </div>
         <div className="ml-4 flex-col border-t-1 border-color p-4">
-          <p className="text-xl font-semibold ">Theme Option</p>
+          <p className="text-xl font-semibold ">Mode Option</p>
 
           <div className="mt-4">
             <input

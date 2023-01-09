@@ -15,7 +15,12 @@ import {
   stackedPrimaryYAxis,
 } from '../constants/data'
 
-const Stacked = ({ width, height, currentMode }) => (
+interface StackedProps {
+  currentMode: string
+  width: string
+  height: string
+}
+const Stacked = ({ width, height, currentMode }: StackedProps) => (
   <ChartComponent
     id="charts"
     primaryXAxis={stackedPrimaryXAxis}

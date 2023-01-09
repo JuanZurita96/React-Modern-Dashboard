@@ -10,7 +10,7 @@ type PopUps = {
 interface DashboardState {
   currentColor: string
   currentMode: string
-  earnings: number
+  earnings: string
   themeSettings: boolean
   sidebarView: boolean
   screenSize: number
@@ -20,7 +20,11 @@ interface DashboardState {
 const initialState: DashboardState = {
   currentColor: localStorage.getItem('themeMode') || '#03C9D7',
   currentMode: localStorage.getItem('colorMode') || 'Light',
-  earnings: Math.floor(Math.random() * 999999),
+  earnings: new Intl.NumberFormat('es-MX', {
+    style: 'currency',
+    currency: 'MXN',
+    minimumFractionDigits: 0,
+  }).format(Math.floor(Math.random() * 999999)),
   themeSettings: false,
   sidebarView: false,
   screenSize: window.innerWidth,
@@ -49,12 +53,6 @@ export const dashboardActions = createSlice({
     },
     activeThemeSettings: (state, action) => {
       state.themeSettings = action.payload
-    },
-    activePopUps: (state, { payload }) => {
-      state.popups = {
-        ...state.popups,
-        [payload.key]: payload.value,
-      }
     },
     updateWindowSize: (state, action) => {
       state.screenSize = action.payload

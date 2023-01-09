@@ -1,21 +1,9 @@
-import {
-  AiOutlineCalendar,
-  AiOutlineShoppingCart,
-  AiOutlineAreaChart,
-  AiOutlineBarChart,
-  AiOutlineStock,
-} from 'react-icons/ai'
-import { FiShoppingBag, FiEdit, FiPieChart, FiCreditCard } from 'react-icons/fi'
-import {
-  BsKanban,
-  BsBarChart,
-  BsCurrencyDollar,
-  BsShield,
-} from 'react-icons/bs'
+import { AiOutlineCalendar, AiOutlineShoppingCart } from 'react-icons/ai'
+import { FiShoppingBag, FiEdit, FiCreditCard } from 'react-icons/fi'
+import { BsKanban, BsCurrencyDollar, BsShield } from 'react-icons/bs'
 import { BiColorFill } from 'react-icons/bi'
 import { IoMdContacts } from 'react-icons/io'
-import { RiContactsLine, RiStockLine } from 'react-icons/ri'
-import { GiLouvrePyramid } from 'react-icons/gi'
+import { RiContactsLine } from 'react-icons/ri'
 import avatar from './assets/avatar.jpg'
 import avatar2 from './assets/avatar2.jpg'
 import avatar3 from './assets/avatar3.png'
@@ -97,44 +85,6 @@ export const links = [
       {
         name: 'color-picker',
         icon: <BiColorFill />,
-      },
-    ],
-  },
-  {
-    title: 'Charts',
-    links: [
-      {
-        name: 'line',
-        icon: <AiOutlineStock />,
-      },
-      {
-        name: 'area',
-        icon: <AiOutlineAreaChart />,
-      },
-
-      {
-        name: 'bar',
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: 'pie',
-        icon: <FiPieChart />,
-      },
-      {
-        name: 'financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: 'stacked',
-        icon: <AiOutlineBarChart />,
       },
     ],
   },

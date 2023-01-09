@@ -11,6 +11,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "lint-staged",
+    "tsc": "tsc",
     "eslint": "eslint",
     "prettier": "prettier"
   },

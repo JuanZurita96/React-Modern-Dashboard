@@ -15,7 +15,7 @@ import {
   LinePrimaryYAxis,
 } from '../constants/data'
 
-const LineChart = ({ currentMode }) => (
+const LineChart = ({ currentMode }: { currentMode: string }) => (
   <ChartComponent
     id="line-chart"
     height="420px"

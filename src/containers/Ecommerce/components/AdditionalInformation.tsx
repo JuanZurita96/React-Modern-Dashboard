@@ -6,7 +6,7 @@ import {
   SparklineAreaData,
 } from '../constants'
 
-const AdditionalInformation = ({ currentColor }) => (
+const AdditionalInformation = ({ currentColor }: { currentColor: string }) => (
   <div className="flex flex-wrap justify-center">
     <div className="m-3 rounded-2xl bg-white p-6 dark:bg-secondary-dark-bg dark:text-gray-200 md:w-400">
       <div className="flex justify-between">

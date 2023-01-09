@@ -2,7 +2,11 @@ import { GoPrimitiveDot } from 'react-icons/go'
 import { Stacked, Pie, Button, SparkLine } from '../../../components'
 import { SparklineAreaData, ecomPieChartData } from '../constants'
 
-const Updates = ({ currentColor, currentMode }) => (
+interface UpdatesProps {
+  currentMode: string
+  currentColor: string
+}
+const Updates = ({ currentColor, currentMode }: UpdatesProps) => (
   <div className="flex flex-wrap justify-center gap-10">
     <div className="m-3 rounded-2xl bg-white p-4 dark:bg-secondary-dark-bg dark:text-gray-200 md:w-780  ">
       <div className="flex justify-between">
@@ -59,9 +63,9 @@ const Updates = ({ currentColor, currentMode }) => (
             />
           </div>
         </div>
-        {/*         <div>
+        <div>
           <Stacked currentMode={currentMode} width="320px" height="360px" />
-        </div> */}
+        </div>
       </div>
     </div>
     <div>

@@ -3,24 +3,14 @@ import { SiShopware } from 'react-icons/si'
 import { MdOutlineCancel } from 'react-icons/md'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { links } from '../constants/data'
-import { useAppSelector, useAppDispatch } from '../redux/store'
+import { useAppSelector } from '../redux/store'
 import { dashboardReducer } from '../redux/reducers'
-import {
-  useWindowDimension,
-  useIsomorphicLayoutEffect,
-} from '../hooks/useWindowSize'
 
 const Sidebar = () => {
-  const { activeSidebar, updateWindowSize } = dashboardReducer.actions
+  const { activeSidebar } = dashboardReducer.actions
   const { currentColor, sidebarView, screenSize } = useAppSelector(
     (state) => state.dashboard
   )
-  const dispatch = useAppDispatch()
-  const { width } = useWindowDimension()
-
-  useIsomorphicLayoutEffect(() => {
-    dispatch(updateWindowSize(width))
-  }, [])
 
   const handleCloseSideBar = () => {
     if (sidebarView !== undefined && screenSize <= 900) activeSidebar(false)
@@ -73,7 +63,7 @@ const Sidebar = () => {
                     }
                   >
                     {link.icon}
-                    <span className="capitalize ">{link.name}</span>
+                    <span className="capitalize">{link.name}</span>
                   </NavLink>
                 ))}
               </div>

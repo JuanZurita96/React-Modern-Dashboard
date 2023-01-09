@@ -9,7 +9,25 @@ import {
   AccumulationTooltip,
 } from '@syncfusion/ej2-react-charts'
 
-const Doughnut = ({ id, data, legendVisiblity, height, currentMode }) => (
+interface PieProps {
+  id: string
+  data: {
+    x: string
+    y: number
+    text: string
+  }[]
+  legendVisiblity: boolean
+  height: string
+  currentMode?: string
+}
+
+const Doughnut = ({
+  id,
+  data,
+  legendVisiblity,
+  height,
+  currentMode,
+}: PieProps) => (
   <AccumulationChartComponent
     id={id}
     legendSettings={{ visible: legendVisiblity, background: 'white' }}
