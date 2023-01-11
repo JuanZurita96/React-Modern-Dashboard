@@ -2,7 +2,12 @@ import { MdOutlineCancel } from 'react-icons/md'
 import Button from './Button'
 import { chatData } from '../constants/data'
 
-const Notification = ({ currentColor, changeFunc }) => (
+interface NotificationProps {
+  currentColor: string
+  changeFunc: () => void
+}
+
+const Notification = ({ currentColor, changeFunc }: NotificationProps) => (
   <div className="nav-item absolute right-5 top-16 w-96 rounded-lg bg-white p-8 dark:bg-[#42464D] md:right-40">
     <div className="flex items-center justify-between">
       <div className="flex gap-3">

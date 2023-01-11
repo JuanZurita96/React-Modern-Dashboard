@@ -3,7 +3,11 @@ import Button from './Button'
 import { userProfileData } from '../constants/data'
 import avatar from '../constants/assets/avatar.jpg'
 
-const UserProfile = ({ currentColor, changeFunc }) => (
+interface UserProfileProps {
+  currentColor: string
+  changeFunc: () => void
+}
+const UserProfile = ({ currentColor, changeFunc }: UserProfileProps) => (
   <div className="nav-item absolute right-1 top-16 w-96 rounded-lg bg-white p-8 dark:bg-[#42464D]">
     <div className="flex items-center justify-between">
       <p className="text-lg font-semibold dark:text-gray-200">User Profile</p>

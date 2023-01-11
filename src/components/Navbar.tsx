@@ -1,3 +1,4 @@
+import React from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { FiShoppingCart } from 'react-icons/fi'
 import { BsChatLeft } from 'react-icons/bs'
@@ -18,20 +19,19 @@ import Notification from './Notification'
 import UserProfile from './UserProfile'
 
 const Navbar = () => {
-  const { activeSidebar, updateWindowSize, activePopUps } =
-    dashboardReducer.actions
-  const {
-    currentColor,
-    screenSize,
-    sidebarView,
-    popups: { cart, notification, chat, userProfile },
-  } = useAppSelector((state) => state.dashboard)
-
+  const { activeSidebar, updateWindowSize } = dashboardReducer.actions
+  const { currentColor, screenSize, sidebarView, popups } = useAppSelector(
+    (state) => state.dashboard
+  )
   const dispatch = useAppDispatch()
   const { width } = useWindowDimension()
-  dispatch(updateWindowSize(width))
+  const [openPopups, setOpenPopups] = React.useState(popups)
+
+  const handleOpenPopUp = (value: string) =>
+    setOpenPopups({ ...popups, [value]: true })
 
   useIsomorphicLayoutEffect(() => {
+    dispatch(updateWindowSize(width))
     if (screenSize <= 900) {
       dispatch(activeSidebar(false))
     } else {
@@ -39,42 +39,31 @@ const Navbar = () => {
     }
   }, [screenSize])
 
-  const handleActionDispatch = (action, value) => dispatch(action(value))
-
   return (
     <div className="relative flex justify-between p-2 md:ml-6 md:mr-6">
       <NavButton
         title="Menu"
-        customFunc={() => handleActionDispatch(activeSidebar, !sidebarView)}
+        customFunc={() => dispatch(activeSidebar(!sidebarView))}
         color={currentColor}
         icon={<AiOutlineMenu />}
       />
       <div className="flex">
         <NavButton
           title="Cart"
-          customFunc={() =>
-            handleActionDispatch(activePopUps, { key: 'cart', value: true })
-          }
+          customFunc={() => handleOpenPopUp('cart')}
           color={currentColor}
           icon={<FiShoppingCart />}
         />
         <NavButton
           title="Chat"
-          customFunc={() =>
-            handleActionDispatch(activePopUps, { key: 'chat', value: !chat })
-          }
+          customFunc={() => handleOpenPopUp('chat')}
           dotColor="#03C9D7"
           color={currentColor}
           icon={<BsChatLeft />}
         />
         <NavButton
           title="Notification"
-          customFunc={() =>
-            handleActionDispatch(activePopUps, {
-              key: 'notification',
-              value: !notification,
-            })
-          }
+          customFunc={() => handleOpenPopUp('notification')}
           dotColor="rgb(254, 201, 15)"
           color={currentColor}
           icon={<RiNotification3Line />}
@@ -82,12 +71,7 @@ const Navbar = () => {
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex cursor-pointer items-center gap-2 rounded-lg p-1 hover:bg-light-gray"
-            onClick={() =>
-              handleActionDispatch(activePopUps, {
-                key: 'userProfile',
-                value: !userProfile,
-              })
-            }
+            onClick={() => handleOpenPopUp('userProfile')}
           >
             <img
               className="h-8 w-8 rounded-full"
@@ -104,42 +88,28 @@ const Navbar = () => {
           </div>
         </TooltipComponent>
 
-        {cart && (
+        {openPopups.cart && (
           <Cart
             currentColor={currentColor}
-            changeFunc={() =>
-              handleActionDispatch(activePopUps, { key: 'cart', value: false })
-            }
+            changeFunc={() => setOpenPopups(popups)}
           />
         )}
-        {chat && (
+        {openPopups.chat && (
           <Chat
             currentColor={currentColor}
-            changeFunc={() =>
-              handleActionDispatch(activePopUps, { key: 'chat', value: !chat })
-            }
+            changeFunc={() => setOpenPopups(popups)}
           />
         )}
-        {notification && (
+        {openPopups.notification && (
           <Notification
             currentColor={currentColor}
-            changeFunc={() =>
-              handleActionDispatch(activePopUps, {
-                key: 'notification',
-                value: !notification,
-              })
-            }
+            changeFunc={() => setOpenPopups(popups)}
           />
         )}
-        {userProfile && (
+        {openPopups.userProfile && (
           <UserProfile
             currentColor={currentColor}
-            changeFunc={() =>
-              handleActionDispatch(activePopUps, {
-                key: 'userProfile',
-                value: !userProfile,
-              })
-            }
+            changeFunc={() => setOpenPopups(popups)}
           />
         )}
       </div>

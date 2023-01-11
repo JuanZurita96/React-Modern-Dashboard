@@ -1,8 +1,14 @@
-import { Button, LineChart } from '../../../components'
+import { Button } from '../../../components'
 import DropDown from './DropDown'
-import { recentTransactions } from '../constants'
+import { recentTransactions, LineChartData } from '../constants'
+import { Charts } from '../../../components/Charts'
 
-const Transactions = ({ currentColor, currentMode }) => (
+interface TransactionsProps {
+  currentColor: string
+  currentMode: string
+}
+
+const Transactions = ({ currentColor, currentMode }: TransactionsProps) => (
   <div className="m-4 flex flex-wrap justify-center gap-10">
     <div className="rounded-2xl bg-white p-6 dark:bg-secondary-dark-bg dark:text-gray-200">
       <div className="flex items-center justify-between gap-2">
@@ -50,9 +56,13 @@ const Transactions = ({ currentColor, currentMode }) => (
         <p className="text-xl font-semibold">Sales Overview</p>
         <DropDown currentMode={currentMode} />
       </div>
-      {/*       <div className="overflow-auto md:w-full">
-        <LineChart currentMode={currentMode} />
-      </div> */}
+      <div className="overflow-auto md:w-full">
+        <Charts
+          type="line"
+          options={LineChartData.options}
+          data={LineChartData.data}
+        />
+      </div>
     </div>
   </div>
 )

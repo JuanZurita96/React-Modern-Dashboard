@@ -14,7 +14,7 @@ const Ecommerce = () => {
   return (
     <div className="mt-24">
       <Earnings currentColor={currentColor} earnings={earnings} />
-      <Updates currentColor={currentColor} currentMode={currentMode} />
+      <Updates currentColor={currentColor} />
       <Transactions currentColor={currentColor} currentMode={currentMode} />
       <AdditionalInformation currentColor={currentColor} />
     </div>

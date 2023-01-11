@@ -1,14 +1,26 @@
+interface ButtonProps {
+  icon?: JSX.Element
+  color: string
+  bgColor?: string
+  bgHoverColor?: string
+  text?: string
+  size?: string
+  borderRadius?: string
+  width?: string
+  changeFunc?: () => void
+}
+
 const Button = ({
   icon,
-  bgColor,
   color,
+  bgColor,
   bgHoverColor,
-  size,
   text,
+  size,
   borderRadius,
   width,
   changeFunc,
-}) => {
+}: ButtonProps) => {
   return (
     <button
       type="button"
