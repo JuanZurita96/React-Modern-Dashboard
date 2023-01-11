@@ -1,10 +1,6 @@
 import { IoIosMore } from 'react-icons/io'
-import { Button, SparkLine } from '../../../components'
-import {
-  medicalproBranding,
-  weeklyStats,
-  SparklineAreaData,
-} from '../constants'
+import { Button } from '../../../components'
+import { medicalproBranding, weeklyStats } from '../constants'
 
 const AdditionalInformation = ({ currentColor }: { currentColor: string }) => (
   <div className="flex flex-wrap justify-center">
@@ -36,17 +32,7 @@ const AdditionalInformation = ({ currentColor }: { currentColor: string }) => (
             <p className={`text-${item.pcColor}`}>{item.amount}</p>
           </div>
         ))}
-        <div className="mt-4">
-          <SparkLine
-            currentColor={currentColor}
-            id="area-sparkLine"
-            height="160px"
-            type="Area"
-            data={SparklineAreaData}
-            width="320"
-            color="rgb(242, 252, 253)"
-          />
-        </div>
+        <div className="mt-4">Si</div>
       </div>
     </div>
     <div className="m-3 w-400 rounded-2xl bg-white p-6 dark:bg-secondary-dark-bg dark:text-gray-200">

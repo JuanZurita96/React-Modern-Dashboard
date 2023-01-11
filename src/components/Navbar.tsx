@@ -26,12 +26,12 @@ const Navbar = () => {
   const dispatch = useAppDispatch()
   const { width } = useWindowDimension()
   const [openPopups, setOpenPopups] = React.useState(popups)
-  dispatch(updateWindowSize(width))
 
   const handleOpenPopUp = (value: string) =>
     setOpenPopups({ ...popups, [value]: true })
 
   useIsomorphicLayoutEffect(() => {
+    dispatch(updateWindowSize(width))
     if (screenSize <= 900) {
       dispatch(activeSidebar(false))
     } else {

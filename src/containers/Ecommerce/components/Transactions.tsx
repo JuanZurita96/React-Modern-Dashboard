@@ -1,6 +1,7 @@
-import { Button, LineChart } from '../../../components'
+import { Button } from '../../../components'
 import DropDown from './DropDown'
-import { recentTransactions } from '../constants'
+import { recentTransactions, LineChartData } from '../constants'
+import { Charts } from '../../../components/Charts'
 
 interface TransactionsProps {
   currentColor: string
@@ -56,7 +57,11 @@ const Transactions = ({ currentColor, currentMode }: TransactionsProps) => (
         <DropDown currentMode={currentMode} />
       </div>
       <div className="overflow-auto md:w-full">
-        <LineChart currentMode={currentMode} />
+        <Charts
+          type="line"
+          options={LineChartData.options}
+          data={LineChartData.data}
+        />
       </div>
     </div>
   </div>

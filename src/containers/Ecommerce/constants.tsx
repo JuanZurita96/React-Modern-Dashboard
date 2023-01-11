@@ -209,3 +209,35 @@ export const ecomPieChartData = [
   { x: '2020', y: 18, text: '25%' },
   { x: '2021', y: 18, text: '25%' },
 ]
+
+export const LineChartData = {
+  data: {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [
+      {
+        label: 'Dataset 1',
+        data: [4, 5, 8, 7, 6, 6, 4],
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      },
+      {
+        label: 'Dataset 2',
+        data: [24, 8, 7, 4, 6, 1, 2],
+        borderColor: 'rgb(53, 162, 235)',
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top' as const,
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Line Chart',
+      },
+    },
+  },
+}

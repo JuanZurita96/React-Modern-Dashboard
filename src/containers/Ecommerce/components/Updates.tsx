@@ -1,12 +1,11 @@
 import { GoPrimitiveDot } from 'react-icons/go'
-import { Stacked, Pie, Button, SparkLine } from '../../../components'
-import { SparklineAreaData, ecomPieChartData } from '../constants'
+import { Charts } from '../../../components/Charts'
+import { LineChartData } from '../constants'
 
 interface UpdatesProps {
-  currentMode: string
   currentColor: string
 }
-const Updates = ({ currentColor, currentMode }: UpdatesProps) => (
+const Updates = ({ currentColor }: UpdatesProps) => (
   <div className="flex flex-wrap justify-center gap-10">
     <div className="m-3 rounded-2xl bg-white p-4 dark:bg-secondary-dark-bg dark:text-gray-200 md:w-780  ">
       <div className="flex justify-between">
@@ -44,27 +43,19 @@ const Updates = ({ currentColor, currentMode }: UpdatesProps) => (
           </div>
 
           <div className="mt-5">
-            <SparkLine
-              currentColor={currentColor}
-              id="line-sparkLine"
-              type="Line"
-              height="80px"
-              width="250px"
-              data={SparklineAreaData}
-              color={currentColor}
-            />
-          </div>
-          <div className="mt-10">
-            <Button
-              color="white"
-              bgColor={currentColor}
-              text="Download Report"
-              borderRadius="10px"
+            <Charts
+              type="line"
+              options={LineChartData.options}
+              data={LineChartData.data}
             />
           </div>
         </div>
         <div>
-          <Stacked currentMode={currentMode} width="320px" height="360px" />
+          <Charts
+            type="bar"
+            options={LineChartData.options}
+            data={LineChartData.data}
+          />
         </div>
       </div>
     </div>
@@ -83,14 +74,10 @@ const Updates = ({ currentColor, currentMode }: UpdatesProps) => (
         </div>
 
         <div className="mt-4">
-          <SparkLine
-            currentColor={currentColor}
-            id="column-sparkLine"
-            height="100px"
-            type="Column"
-            data={SparklineAreaData}
-            width="320"
-            color="rgb(242, 252, 253)"
+          <Charts
+            type="line"
+            options={LineChartData.options}
+            data={LineChartData.data}
           />
         </div>
       </div>
@@ -102,11 +89,10 @@ const Updates = ({ currentColor, currentMode }: UpdatesProps) => (
         </div>
 
         <div className="w-40">
-          <Pie
-            id="pie-chart"
-            data={ecomPieChartData}
-            legendVisiblity={false}
-            height="160px"
+          <Charts
+            type="pie"
+            options={LineChartData.options}
+            data={LineChartData.data}
           />
         </div>
       </div>
