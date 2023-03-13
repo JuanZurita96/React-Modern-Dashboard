@@ -7,15 +7,13 @@ import {
 } from './components'
 
 const Ecommerce = () => {
-  const { currentColor, currentMode, earnings } = useAppSelector(
-    (state) => state.dashboard
-  )
+  const { currentColor, earnings } = useAppSelector((state) => state.dashboard)
 
   return (
     <div className="mt-24">
       <Earnings currentColor={currentColor} earnings={earnings} />
       <Updates currentColor={currentColor} />
-      <Transactions currentColor={currentColor} currentMode={currentMode} />
+      <Transactions currentColor={currentColor} />
       <AdditionalInformation currentColor={currentColor} />
     </div>
   )
