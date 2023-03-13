@@ -182,16 +182,16 @@ export const weeklyStats = [
 
 export const dropdownData = [
   {
-    Id: '1',
-    Time: 'March 2021',
+    value: '1',
+    label: 'March 2021',
   },
   {
-    Id: '2',
-    Time: 'April 2021',
+    value: '2',
+    label: 'April 2021',
   },
   {
-    Id: '3',
-    Time: 'May 2021',
+    value: '3',
+    label: 'May 2021',
   },
 ]
 

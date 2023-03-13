@@ -5,15 +5,14 @@ import { Charts } from '../../../components/Charts'
 
 interface TransactionsProps {
   currentColor: string
-  currentMode: string
 }
 
-const Transactions = ({ currentColor, currentMode }: TransactionsProps) => (
+const Transactions = ({ currentColor }: TransactionsProps) => (
   <div className="m-4 flex flex-wrap justify-center gap-10">
     <div className="rounded-2xl bg-white p-6 dark:bg-secondary-dark-bg dark:text-gray-200">
       <div className="flex items-center justify-between gap-2">
         <p className="text-xl font-semibold">Recent Transactions</p>
-        <DropDown currentMode={currentMode} />
+        <DropDown />
       </div>
       <div className="mt-10 w-72 md:w-400">
         {recentTransactions.map((item) => (
@@ -54,7 +53,7 @@ const Transactions = ({ currentColor, currentMode }: TransactionsProps) => (
     <div className="w-96 rounded-2xl bg-white p-6 dark:bg-secondary-dark-bg dark:text-gray-200 md:w-760">
       <div className="mb-10 flex items-center justify-between gap-2">
         <p className="text-xl font-semibold">Sales Overview</p>
-        <DropDown currentMode={currentMode} />
+        <DropDown />
       </div>
       <div className="overflow-auto md:w-full">
         <Charts
